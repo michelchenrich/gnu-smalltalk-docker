@@ -5,8 +5,11 @@ RUN apt-get install -y gnu-smalltalk
 
 WORKDIR /app
 
-RUN gst-load -iI seaside.im Seaside Seaside-Development Seaside-Examples
+RUN gst-load -iI build.im Seaside
 
-CMD ["gst-remote", "-I", "seaside.im", "--server", "--start=Seaside"]
+COPY . /app
+RUN gst build_image.st
+
+CMD ["gst-remote", "-I", "build.im", "--server", "--start=Seaside"]
 
 EXPOSE 8080
