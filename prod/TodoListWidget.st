@@ -1,6 +1,6 @@
-ILWidget subclass: TodoListWidget [
+Iliad.ILWidget subclass: TodoListWidget [
   | selectBlock dataGrid |
-  
+
   addNewItem [
     | newItem |
     newItem := TodoListItem new.
