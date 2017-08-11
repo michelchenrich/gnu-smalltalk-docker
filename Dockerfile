@@ -5,11 +5,12 @@ RUN apt-get install -y gnu-smalltalk
 
 WORKDIR /app
 
-RUN gst-load -iI build.im Seaside
+RUN gst-package --download Grease
+RUN gst-package --download Iliad
 
 COPY . /app
 RUN gst build_image.st
 
-CMD ["gst-remote", "-I", "build.im", "--server", "--start=Seaside"]
+CMD ["gst-remote", "-I", "prod.im", "--server"]
 
 EXPOSE 8080
