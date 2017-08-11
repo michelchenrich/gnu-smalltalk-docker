@@ -13,4 +13,4 @@ RUN gst build_image.st
 
 CMD ["gst-remote", "-I", "prod.im", "--server"]
 
-EXPOSE 7777
+EXPOSE 8080
